@@ -1,0 +1,5 @@
+const booklist = [{
+    bookname :' ',
+    author :' '
+}]
+
