@@ -1,4 +1,4 @@
-/* eslint-disable rule-you-want-to-disable */
+/* eslint-disable */
 
 let objectlist =[
   {
