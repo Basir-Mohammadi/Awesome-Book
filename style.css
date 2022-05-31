@@ -1,16 +1,16 @@
 * {
-    text-decoration: none;
-    padding: 0;
-    margin: 0;
-    list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 body {
-    align-items: center;
-    text-align: center;
-    line-height: 20px;
+  align-items: center;
+  text-align: center;
+  line-height: 20px;
 }
 
 ul li {
-    margin: 20px;
+  margin: 20px;
 }
