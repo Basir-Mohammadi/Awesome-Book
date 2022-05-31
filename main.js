@@ -1,19 +1,11 @@
 /* eslint-disable */
 
 let objectlist =[
-  {
-    bookname: 'Java books',
-    author: 'Ali',
-  },
-  {
-    bookname: 'CSS Books',
-    author: 'Ahmad',
-  },
-  {
-    bookname:'HTML Books',
-    author:'Ali'
-  }
+
+
 ];
+
+
 
 function generateBooks({
   bookname, author
@@ -22,10 +14,11 @@ function generateBooks({
   <li>
   <span class="name">${bookname}</span><br>
   <span class="name">${author}</span><br>
-  <button class="delete">delete </button><br>
-</li>
+  <button class="delete"> Remove </button>
+ </li>
   `;
 }
+
 
 const bookContainer=document.querySelector('.book-container ul');
 
@@ -33,11 +26,19 @@ const bookList=objectlist.map(book => generateBooks(book)).join('');
 
 bookContainer.innerHTML+=bookList;
 
-localStorage.setItem('books',JSON.stringify(objectlist))
 
 const lists =document.querySelector ('#book-list ul');
 
 
+let booksFromLocalStorage = JSON.parse(localStorage.getItem('books'));
+if (booksFromLocalStorage) {
+  bookContainer.innerHTML = booksFromLocalStorage
+    .map((book) => generateBooks(book))
+    .join('');
+} 
+else {
+  bookContainer.innerHTML = books.map((book) => generateBooks(book)).join('');
+}
 
 // delete books
 
@@ -66,9 +67,9 @@ addForm.addEventListener('submit', (e) => {
   objectlist.push({
     bookname:titleName , author:authorName
   })
-  form.reset();
+  
   localStorage.setItem('books',JSON.stringify(objectlist))
-
+  form.reset();
   const li = document.createElement('li');
   const title = document.createElement('span');
   const breakline = document.createElement('br');
@@ -90,7 +91,6 @@ addForm.addEventListener('submit', (e) => {
   li.appendChild(deleteBtn);
   lists.appendChild(li);
 
-  // content
 
 //append
 
@@ -106,8 +106,7 @@ bookContainer.appendChild(li);
 title.textContent =titleName;
 author.textContent =authorName;
 deleteBtn.textContent='delete';
-
-
-
 })
+
+
 
