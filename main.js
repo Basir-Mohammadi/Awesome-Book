@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const objectlist = [
+=======
+let objectlist =[
+>>>>>>> df7048d8f413f448c740094d22849c8a539a643d
   {
     bookname: 'Java books',
     author: 'Ali',
@@ -8,6 +12,7 @@ const objectlist = [
     author: 'Ahmad',
   },
   {
+<<<<<<< HEAD
     bookname: 'HTML Books',
     author: 'Ali',
   },
@@ -16,6 +21,16 @@ const objectlist = [
 function generateBooks({
   author, bookname,
 }) {
+=======
+    bookname:'HTML Books',
+    author:'Ali'
+  }
+];
+
+function generateBooks({
+  bookname, author
+}){
+>>>>>>> df7048d8f413f448c740094d22849c8a539a643d
   return `
   <li>
   <span class="name">${bookname}</span><br>
@@ -25,6 +40,7 @@ function generateBooks({
   `;
 }
 
+<<<<<<< HEAD
 const lists = document.querySelector('#book-list ul');
 const btnAdd = document.querySelector('.add');
 
@@ -32,20 +48,49 @@ const btnAdd = document.querySelector('.add');
 
 lists.addEventListener('click', (e) => {
   if (e.target.className === 'delete') {
+=======
+const bookContainer=document.querySelector('.book-container ul');
+
+const bookList=objectlist.map(book => generateBooks(book)).join('');
+
+bookContainer.innerHTML+=bookList;
+
+localStorage.setItem('books',JSON.stringify(objectlist))
+
+const lists =document.querySelector ('#book-list ul');
+
+
+
+// delete books
+
+bookContainer.addEventListener ('click' ,function (e) {
+  const title = e.target.parentElement.firstElementChild.textContent;
+  if (e.target.className =='delete') {
+>>>>>>> df7048d8f413f448c740094d22849c8a539a643d
     const li = e.target.parentElement;
-    lists.removeChild(li);
+    bookContainer.removeChild(li);
+    objectlist = objectlist.filter((obj) => obj.bookname !== title);
+    console.log(objectlist);
+    console.log(title);
+    localStorage.setItem('books',JSON.stringify(objectlist))
   }
 });
 
 // add books
 
+<<<<<<< HEAD
 const addForm = document.forms['add-books'];
+=======
+const addForm =document.forms['add-books'];
+const form =document.querySelector('form');
+>>>>>>> df7048d8f413f448c740094d22849c8a539a643d
 
 addForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const titleName = addForm.querySelector('.name').value;
   const authorName = addForm.querySelector('.author').value;
+<<<<<<< HEAD
 
   // local storage
 
@@ -62,6 +107,13 @@ addForm.addEventListener('submit', (e) => {
   // btnAdd.addEventListener('click', saveToLocalStorage);
 
   // create element
+=======
+  objectlist.push({
+    bookname:titleName , author:authorName
+  })
+  form.reset();
+  localStorage.setItem('books',JSON.stringify(objectlist))
+>>>>>>> df7048d8f413f448c740094d22849c8a539a643d
 
   const li = document.createElement('li');
   const title = document.createElement('span');
@@ -86,7 +138,29 @@ addForm.addEventListener('submit', (e) => {
 
   // content
 
+<<<<<<< HEAD
   title.textContent = titleName;
   author.textContent = authorName;
   deleteBtn.textContent = 'delete';
 });
+=======
+//append
+
+li.appendChild(title);
+li.appendChild(breakline2);
+li.appendChild(author);
+li.appendChild(breakline);
+li.appendChild(deleteBtn);
+bookContainer.appendChild(li);
+
+//content
+
+title.textContent =titleName;
+author.textContent =authorName;
+deleteBtn.textContent='delete';
+
+
+
+})
+
+>>>>>>> df7048d8f413f448c740094d22849c8a539a643d
