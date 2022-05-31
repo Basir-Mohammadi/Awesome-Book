@@ -1,3 +1,5 @@
+/* eslint-disable rule-you-want-to-disable */
+
 let objectlist =[
   {
     bookname: 'Java books',
