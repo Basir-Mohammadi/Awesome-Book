@@ -1,4 +1,4 @@
-const objectlist =[
+let objectlist =[
   {
     bookname:'Java books',
     author:'Ali'
@@ -11,10 +11,10 @@ const objectlist =[
     bookname:'HTML Books',
     author:'Ali'
   }
-]
+];
 
 function generateBooks({
-  author,bookname
+  bookname, author
 }){
   return `
   <li>
@@ -25,45 +25,47 @@ function generateBooks({
   `
 }
 
+const bookContainer=document.querySelector('.book-container ul');
+
+const bookList=objectlist.map(book => generateBooks(book)).join('');
+
+bookContainer.innerHTML+=bookList;
+
+localStorage.setItem('books',JSON.stringify(objectlist))
 
 const lists =document.querySelector ('#book-list ul');
-const btnAdd= document.querySelector ('.add');
+
 
 
 // delete books
 
-lists.addEventListener ('click' ,function (e) {
-
+bookContainer.addEventListener ('click' ,function (e) {
+  const title = e.target.parentElement.firstElementChild.textContent;
   if (e.target.className =='delete') {
     const li = e.target.parentElement;
-    lists.removeChild(li);
+    bookContainer.removeChild(li);
+    objectlist = objectlist.filter((obj) => obj.bookname !== title);
+    console.log(objectlist);
+    console.log(title);
+    localStorage.setItem('books',JSON.stringify(objectlist))
   }
 })
 
 //add books
 
 const addForm =document.forms['add-books'];
+const form =document.querySelector('form');
 
 addForm.addEventListener ('submit', function (e) {
   e.preventDefault();
 
   const titleName = addForm.querySelector('.name').value;
   const authorName = addForm.querySelector('.author').value;
-
-
-//local storage
-
-// titleName.addEventListener('input' , letter =>{
-//   titleName.textContent=letter.target.value;
-//   authorName.textContent=letter.target.value;
-// })
-
-// const saveToLocalStorage =() =>{
-//   localStorage.setItem('inputName',titleName.textContent);
-//   localStorage.setItem('inputAuthor',authorName.textContent);
-// }
-
-// btnAdd.addEventListener('click', saveToLocalStorage);
+  objectlist.push({
+    bookname:titleName , author:authorName
+  })
+  form.reset();
+  localStorage.setItem('books',JSON.stringify(objectlist))
 
 //create element
 
@@ -88,13 +90,15 @@ li.appendChild(breakline2);
 li.appendChild(author);
 li.appendChild(breakline);
 li.appendChild(deleteBtn);
-lists.appendChild(li);
+bookContainer.appendChild(li);
 
 //content
 
 title.textContent =titleName;
 author.textContent =authorName;
 deleteBtn.textContent='delete';
+
+
 
 })
 
