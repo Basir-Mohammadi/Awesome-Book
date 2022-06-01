@@ -1,3 +1,4 @@
+/* eslint-disable */
 const booksContainer = document.querySelector ('.book-container');
 const form = document.querySelector ('form');
 

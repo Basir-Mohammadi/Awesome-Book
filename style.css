@@ -28,7 +28,6 @@ form {
   border: 2px solid grey;
   margin: 15px;
   width: 98%;
-  
 }
 
 input {
@@ -36,17 +35,6 @@ input {
   border: 2px solid;
   padding: 5px;
   border-radius: 5px;
-}
-
-.book-container div:nth-child(odd) {
-  background: lightgrey;
-}
-
-
-.add {
-  margin-top: 1%;
-  box-shadow: 5px 2px;
-  width: 5%;
 }
 
 .book-container div {
@@ -57,3 +45,12 @@ input {
   height: 35px;
 }
 
+.book-container div:nth-child(odd) {
+  background: lightgrey;
+}
+
+.add {
+  margin-top: 1%;
+  box-shadow: 5px 2px;
+  width: 5%;
+}
