@@ -11,6 +11,49 @@ body {
   line-height: 20px;
 }
 
-ul li {
-  margin: 20px;
+ul {
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.book-container {
+  border: 2px solid grey;
+  margin: 15px;
+  width: 98%;
+  
+}
+
+input {
+  margin-bottom: 1%;
+  border: 2px solid;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.book-container div:nth-child(odd) {
+  background: lightgrey;
+}
+
+
+.add {
+  margin-top: 1%;
+  box-shadow: 5px 2px;
+  width: 5%;
+}
+
+.book-container div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1%;
+  height: 35px;
+}
+

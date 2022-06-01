@@ -1,10 +1,6 @@
 /* eslint-disable */
 
-let objectlist =[
-
-
-];
-
+let objectlist =[ ];
 
 
 function generateBooks({
@@ -13,7 +9,7 @@ function generateBooks({
   return `
   <li>
   <span class="name">${bookname}</span><br>
-  <span class="name">${author}</span><br>
+  <span class="author">${author}</span><br>
   <button class="delete"> Remove </button>
  </li>
   `;
@@ -48,8 +44,6 @@ bookContainer.addEventListener ('click' ,function (e) {
     const li = e.target.parentElement;
     bookContainer.removeChild(li);
     objectlist = objectlist.filter((obj) => obj.bookname !== title);
-    console.log(objectlist);
-    console.log(title);
     localStorage.setItem('books',JSON.stringify(objectlist))
   }
 });
@@ -70,6 +64,7 @@ addForm.addEventListener('submit', (e) => {
   
   localStorage.setItem('books',JSON.stringify(objectlist))
   form.reset();
+
   const li = document.createElement('li');
   const title = document.createElement('span');
   const breakline = document.createElement('br');
