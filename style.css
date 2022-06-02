@@ -9,14 +9,20 @@ body {
   line-height: 20px;
 }
 
+section h1 {
+  align-items: center;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
 #book-list h1 {
   align-items: center;
-  text-align: center; 
+  text-align: center;
 }
 
 .title {
   align-items: center;
-  text-align: center; 
+  text-align: center;
   margin-bottom: 15px;
 }
 
@@ -50,6 +56,11 @@ header {
   padding-left: 5px;
 }
 
+.border {
+  border-right: 2px solid grey;
+  padding-right: 5px;
+}
+
 .right .border:hover {
   border-right: 3px solid rgb(124, 124, 236);
 }
@@ -58,6 +69,11 @@ header {
   display: flex;
   justify-content: space-between;
 }
+
+section ul {
+  list-style: circle;
+}
+
 .book-container ul {
   display: flex;
   flex-direction: row;
@@ -70,13 +86,7 @@ header {
   box-shadow: 5px 2px;
 }
 
-.border {
-  border-right: 2px solid grey;
-  padding-right: 5px;
-}
-
 .form {
-  display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -121,24 +131,13 @@ input {
   float: right;
 }
 
-section ul {
-  list-style: circle;
-}
-
-section  {
+section {
   list-style-type: circle;
   margin: auto 18%;
   display: none;
 }
 
-section h1 {
-  align-items: center;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
 .contact-details {
-  display: flex;
   flex-direction: column;
   display: none;
   align-items: center;
