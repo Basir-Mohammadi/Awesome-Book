@@ -22,14 +22,14 @@ To get a local copy up and running follow these simple example steps.
 
 ## Live Demo
 
-[Awesome Books Live](https://basirking.github.io/Awesome_Books/)
+[Awesome Books Live](https://basirking.github.io/Awesome-Book/)
 
 ## Author
 
 👤 **Basir Mohammadi**
 
-- GitHub: [@githubhandle](https://github.com/basirking)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/basirahmad1312/)
+- GitHub: [@basirking](https://github.com/basirking)
+- LinkedIn: [Basir Mohammadi](https://www.linkedin.com/in/basirahmad1312/)
 
 
 
@@ -37,7 +37,7 @@ To get a local copy up and running follow these simple example steps.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/basirking/Awesome_Books/issues)
+Feel free to check the [https://github.com/basirking/Awesome_Books/issues](https://github.com/basirking/Awesome_Books/issues)
 
 ## Show your support
 
